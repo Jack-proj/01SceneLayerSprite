@@ -39,7 +39,17 @@ bool Scene101::init()
 	this->addChild(bkimage, 0);
 
 	// 自行增加 sprite 將 bean01.png 到螢幕正中間
+	Sprite *bean_image = Sprite::create("scene101/bean01.png");
+	bean_image->setPosition(330,593);
+	bean_image->setScale(2.0);
+	bean_image->setOpacity(100);
+	bean_image->setColor(Color3B(200,209,63));
+	bean_image->setRotation(90);
+	size = bean_image->getContentSize();
+	Point pos = bean_image->getPosition();
+	this->rectbean = Rect(pos.x - size.width / 2, pos.y - size.height / 2, size.width, size.height);
 
+	this->addChild(bean_image);
 
 	// create and initialize a label, add a label shows "Scene 101"
 	auto label = Label::createWithTTF("Scene 101", "fonts/Marker Felt.ttf", 32);
@@ -79,7 +89,7 @@ bool Scene101::init()
 	this->returnbtn = Sprite::create("scene101/returnbtn.png");
 	size = returnbtn->getContentSize();
 	this->returnbtn->setPosition(Vec2(origin.x + size.width / 2 + 5, origin.y + visibleSize.height - size.height / 2 - 5));
-	Point pos = returnbtn->getPosition();
+	pos = returnbtn->getPosition();
 	this->rectReturn = Rect(pos.x - size.width / 2, pos.y - size.height / 2, size.width, size.height);
 	this->addChild(returnbtn, 1);
 

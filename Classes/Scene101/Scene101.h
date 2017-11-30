@@ -9,9 +9,11 @@ private:
 	cocos2d::Sprite *cuberbtn;
 	cocos2d::Sprite *replaybtn;
 	cocos2d::Sprite *returnbtn;
+	//cocos2d::Sprite *bean_01;
 	cocos2d::Rect    rectCuber;
 	cocos2d::Rect    rectReplay;
 	cocos2d::Rect    rectReturn;
+	cocos2d::Rect    rectbean;
 
 	int  _sceneno;
 	char _cSceneNo[10];
